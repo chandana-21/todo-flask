@@ -24,16 +24,21 @@ class Todo (db.Model):
 def index():
 
     if request.method == 'POST':
+
         task_content = request.form['content']
         new_task = Todo(content=task_content)
 
+
         try:
+
             db.session.add(new_task)
             db.session.commit()
             return redirect('/')
 
+
         except:
-            return "There was an issue, try again!"
+
+            return "There was an issue adding the task, try again!"
 
 
 
@@ -43,6 +48,50 @@ def index():
         return render_template('index.html', tasks=tasks)
 
 
+@app.route('/delete/<int:id>')
+def delete(id):
+
+    task_to_delete = Todo.query.get_or_404(id)
+
+    try:
+
+        db.session.delete(task_to_delete)
+        db.session.commit()
+        return redirect('/')
+
+    except:
+
+        return ("There was an issue deleting the task, try again!")
+
+
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+
+    task = Todo.query.get_or_404(id)
+
+
+    if request.method == 'POST':
+
+        task.content = request.form['content']
+
+
+        try:
+
+            db.session.commit()
+            return redirect('/')
+
+        except:
+
+            return ("There was an issue updating the task, try again!")
+    
+
+    else:
+
+        return render_template('update.html',task=task)
+
+
+
 
 if __name__ == "__main__":
+
     app.run(debug=True)

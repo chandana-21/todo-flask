@@ -1,13 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&family=Roboto:wght@300&display=swap');
 body, html{
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Baloo Tamma 2', cursive;
+    background: #0b2557;  /* fallback for old browsers */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .content {
     margin: 0 auto;
     width: 400px;
 }
+h1{   
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 80px;
+    letter-spacing: 5px;
+    top: 50%;
+    text-shadow: -1px -1px 0px #141E30,
+        3px 3px 0px #141E30,
+        6px 6px 0px rgb(108, 153, 192);
+}
+h2{
+    color: white;
+}
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+th, td {
+	padding: 15px;
+	color: #fff;
+}
+th {
+	text-align: center;
+}
 table, td, th {
     border: 1px solid #aaa;
+    color: white;
 }
 table {
     border-collapse: collapse;
@@ -19,4 +50,35 @@ th {
 td {
     text-align: center;
     padding: 5px;
+}
+th {
+	text-align: left;
+}
+thead th {
+		background-color: #355981;
+}
+tbody tr:hover {
+			background-color: rgba(255,255,255,0.3);
+}
+tbody	td {
+		position: relative;
+}
+tbody	td:hover::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+}
+tbody td a{
+    text-decoration: none;
+}
+.delete{
+    color:crimson
+}
+.update{
+    color:moccasin
 }
