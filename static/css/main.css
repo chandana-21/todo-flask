@@ -7,7 +7,7 @@ body, html{
 }
 .content {
     margin: 0 auto;
-    width: 400px;
+    width: 550px;
 }
 h1{   
     text-align: center;
@@ -32,6 +32,7 @@ table {
 th, td {
 	padding: 15px;
 	color: #fff;
+    text-align: center;
 }
 th {
 	text-align: center;
@@ -52,7 +53,8 @@ td {
     padding: 5px;
 }
 th {
-	text-align: left;
+	text-align: center;
+    font-size: large;
 }
 thead th {
 		background-color: #355981;
@@ -81,4 +83,25 @@ tbody td a{
 }
 .update{
     color:moccasin
+}
+.form {
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+#content {
+    width: 70%;
+    margin-top: 25px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: large;
+}
+#btn{
+    border-radius: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: large;
+    background-color: #355981;
+    color: white;
+    font-family: 'Baloo Tamma 2', cursive;
 }
